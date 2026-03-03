@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: covid-mortality-forecast
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python dashboard/app.py"

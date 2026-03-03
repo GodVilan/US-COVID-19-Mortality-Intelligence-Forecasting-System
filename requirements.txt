@@ -1,0 +1,9 @@
+pandas
+numpy
+statsmodels
+prophet
+xgboost
+scikit-learn
+plotly
+dash
+dash_table
