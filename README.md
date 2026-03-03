@@ -31,8 +31,6 @@
 >
 > **Value:** Seasonal SARIMAX, evaluated against Prophet and XGBoost via holdout validation and 5-fold rolling cross-validation, achieved a **Holdout MAE of 138.14** with near-identical cross-validation MAE of **137.86** — confirming low overfitting and strong generalization. This system demonstrates the full data science stack: statistical rigor, ML engineering, deployment, and decision-relevant visualization.
 
-**Target roles:** Data Scientist · ML Engineer · Applied Scientist · Gen AI Engineer · Quantitative Analyst
-
 ---
 
 ## 📸 Demo
