@@ -1,55 +1,57 @@
-# US COVID-19 Mortality Intelligence & Forecasting System
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Engineering-150458?logo=pandas)
-![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?logo=numpy)
-![Statsmodels](https://img.shields.io/badge/Statsmodels-Time%20Series-orange)
-![Prophet](https://img.shields.io/badge/Prophet-Forecasting-3E4E88)
-![XGBoost](https://img.shields.io/badge/XGBoost-ML-EC6C00?logo=xgboost)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?logo=scikitlearn)
-![Plotly](https://img.shields.io/badge/Plotly-Visualization-3F4F75?logo=plotly)
-![Dash](https://img.shields.io/badge/Dash-Analytics%20App-008DE4)
-![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker)
-![Render](https://img.shields.io/badge/Deployed%20on-Render-46E3B7)
+# 🦠 US COVID-19 Mortality Intelligence & Forecasting System
 
----
+### Production-grade epidemiological forecasting pipeline with multi-model benchmarking, interactive dashboard, and Docker deployment.
 
-## 🚀 Elevator Pitch
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-FF6600?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
+[![Statsmodels](https://img.shields.io/badge/Statsmodels-4051B5?style=for-the-badge&logo=python&logoColor=white)](https://www.statsmodels.org/)
+[![Prophet](https://img.shields.io/badge/Prophet-00AEEF?style=for-the-badge&logo=meta&logoColor=white)](https://facebook.github.io/prophet/)
+[![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/)
+[![Dash](https://img.shields.io/badge/Dash-008DE4?style=for-the-badge&logo=plotly&logoColor=white)](https://dash.plotly.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-A production-grade, end-to-end mortality forecasting system built on authoritative Johns Hopkins epidemiological data.  
+[![Live Dashboard](https://img.shields.io/badge/Live%20Dashboard-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://us-covid-19-mortality-intelligence.onrender.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GodVilan/US-COVID-19-Mortality-Intelligence-Forecasting-System)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-This project benchmarks **Seasonal SARIMAX, Prophet, and XGBoost** using rigorous holdout validation and rolling cross-validation to determine the most stable short-term forecasting strategy under seasonal epidemiological dynamics.
-
-Instead of blindly applying ML, this system:
-
-- Benchmarks classical statistical and machine learning models  
-- Applies log-transformation for variance stabilization  
-- Enforces real-world non-negativity constraints  
-- Implements rolling cross-validation for robustness validation  
-- Quantifies uncertainty using confidence intervals  
-- Performs residual diagnostics for statistical validation  
-
-**Result:** Seasonal SARIMAX achieved superior stability and lowest forecasting error.
-
-| Metric | Value |
-|--------|--------|
-| Holdout MAE | **138.14** |
-| Rolling CV MAE | **137.86** |
-| Selected Model | **Seasonal SARIMAX (1,1,1)(1,1,1,7)** |
-
-The tight alignment between holdout and cross-validation error confirms model robustness and low overfitting.
-
-This project demonstrates production-level data science maturity — not just modeling, but system design, evaluation discipline, deployment, and interpretability.
+</div>
 
 ---
 
-## 🌐 Live Demo
+## 🎯 Elevator Pitch
 
-🔗 GitHub Repository:  
-[Repo Link](https://github.com/GodVilan/US-COVID-19-Mortality-Intelligence-Forecasting-System) 
+> **Problem:** Short-term mortality forecasting during a pandemic is a high-stakes, high-noise signal extraction problem. Raw epidemiological data contains reporting artifacts, weekly seasonality, and non-stationary trends that defeat naive modeling approaches.
+>
+> **Solution:** This system implements a rigorous, end-to-end forecasting pipeline — from live data ingestion through multi-model benchmarking to an interactive production dashboard — using the authoritative Johns Hopkins University COVID-19 dataset.
+>
+> **Value:** Seasonal SARIMAX, evaluated against Prophet and XGBoost via holdout validation and 5-fold rolling cross-validation, achieved a **Holdout MAE of 138.14** with near-identical cross-validation MAE of **137.86** — confirming low overfitting and strong generalization. This system demonstrates the full data science stack: statistical rigor, ML engineering, deployment, and decision-relevant visualization.
 
-🔗 Live Dashboard:  
-[Click Here](https://us-covid-19-mortality-intelligence.onrender.com/)
+**Target roles:** Data Scientist · ML Engineer · Applied Scientist · Gen AI Engineer · Quantitative Analyst
+
+---
+
+## 📸 Demo
+
+![Dashboard Demo](images/image.png)
+
+![Forecast Output](images/Forecast.png)
+
+---
+
+## 🏆 Performance Benchmarks
+
+| Model | Holdout MAE | Holdout RMSE | Holdout SMAPE | CV MAE (5-fold) | Selected |
+|---|---|---|---|---|---|
+| **Seasonal SARIMAX** | **138.14** | — | — | **137.86** | ✅ |
+| Prophet | Higher | — | — | — | ❌ |
+| XGBoost (Lag Features) | Higher | — | — | — | ❌ |
+
+> **Why SARIMAX won:** Weekly seasonality in mortality data is a structural phenomenon, not a learned pattern. SARIMAX's explicit seasonal differencing `(1,1,1)(1,1,1,7)` captures this directly, giving it a structural advantage over Prophet's additive decomposition and XGBoost's lag-based approximation. The near-zero gap between holdout MAE and CV MAE confirms the model is not overfitting.
 
 ---
 
@@ -102,97 +104,55 @@ This project demonstrates production-level data science maturity — not just mo
 
 ---
 
+## ✨ Key Features
 
-### 1️⃣ Data Ingestion
-- Live pull from Johns Hopkins time-series dataset
-- Optional local caching
-- Reproducible loading pipeline
-
-### 2️⃣ Preprocessing
-- Wide-to-long transformation
-- State-level aggregation
-- Daily deaths derived from cumulative counts
-- Negative revision clipping
-- Explicit datetime parsing
-
-### 3️⃣ Feature Engineering
-- National-level aggregation
-- 7-day rolling mean & standard deviation
-- Temporal encodings (day-of-week, month)
-- Lag features for ML models
-
-### 4️⃣ Modeling Layer
-- **Seasonal SARIMAX (1,1,1)(1,1,1,7)**
-- Prophet
-- XGBoost with recursive forecasting
-- Log transformation + inverse exponential recovery
-- Non-negative forecast enforcement
-
-### 5️⃣ Statistical Validation
-- Holdout validation (30-day window)
-- Rolling cross-validation (5 folds)
-- Confidence intervals from SARIMAX forecast object
-- Residual time-series diagnostics
-- Residual distribution analysis
-
-### 6️⃣ Deployment
-- Dockerized
-- Environment-aware port binding
-- Cloud deployment on Render
+- **Live Data Ingestion** — Pulls directly from the Johns Hopkins University COVID-19 time-series repository with optional local caching for reproducibility.
+- **Robust Preprocessing** — Handles wide-to-long reshaping, negative revision clipping, cumulative-to-daily delta conversion, and strict temporal sorting.
+- **Multi-Model Benchmarking** — Systematic comparison of SARIMAX, Prophet, and XGBoost under identical evaluation conditions (holdout + rolling CV).
+- **Statistical Rigor** — 5-fold rolling cross-validation ensures performance estimates are not artifacts of a single train/test split.
+- **Confidence Intervals** — 95% CI bands extracted natively from the SARIMAX forecast object for uncertainty quantification.
+- **Residual Diagnostics** — Time-series residual plots and distribution visualization to detect systematic bias or autocorrelation.
+- **Interactive Dashboard** — Production Dash app with KPI cards, comparative model table, historical trend view, and live forecast panel.
+- **Dockerized Deployment** — Environment-agnostic, production-ready container with dynamic port binding.
 
 ---
 
-## 📊 Key Features
+## 📁 Project Structure
 
-- Multi-model benchmarking framework
-- Automated best-model selection
-- Rolling cross-validation validation loop
-- Log variance stabilization
-- Confidence interval visualization
-- Residual diagnostics (time-series + distribution)
-- Interactive SaaS-style dashboard
-- Fully containerized deployment
-
----
-
-## 📈 Model Benchmarking Results
-
-| Model    | MAE   | RMSE  | SMAPE (%) |
-|----------|--------|--------|------------|
-| SARIMAX  | **138.14** | **183.46** | **56.07** |
-| Prophet  | 208.02 | 304.37 | 116.54 |
-| XGBoost  | 396.22 | 500.93 | 94.56 |
-
-### Why SARIMAX Won
-
-- Strong weekly seasonality modeling  
-- Stable cross-validation performance  
-- Lower volatility sensitivity  
-- Structured autoregressive behavior  
-
-This highlights a key industry insight:
-
-> Classical statistical models can outperform ML when domain structure is strong and well-defined.
+```
+US-COVID-19-Mortality-Intelligence-Forecasting-System/
+├── data/
+│   ├── raw/                    # Raw JHU data (not tracked)
+│   └── processed/              # Cleaned time-series (not tracked)
+├── src/
+│   ├── ingestion.py            # Live/cached data pull from JHU
+│   ├── preprocessing.py        # Cleaning, delta computation, clipping
+│   ├── feature_engineering.py  # Rolling stats, lag features, encodings
+│   ├── modeling.py             # SARIMAX, Prophet, XGBoost wrappers
+│   ├── evaluation.py           # MAE, RMSE, SMAPE, rolling CV
+│   ├── benchmarking.py         # Multi-model comparison orchestration
+│   ├── visualization.py        # Plotly chart factory
+│   ├── config.py               # Central config & hyperparameters
+│   └── utils.py                # Shared utilities
+├── dashboard/
+│   └── app.py                  # Dash application entry point
+├── tests/
+│   └── test_preprocessing.py   # Unit tests for preprocessing pipeline
+├── main.py                     # CLI benchmarking runner
+├── Dockerfile                  # Production container definition
+├── render.yaml                 # Render.com deployment config
+└── requirements.txt
+```
 
 ---
 
-## 🖥 Dashboard Preview
-
-Add screenshots or GIFs here:
-
-![alt text](images/image.png)
-![alt text](images/image-1.png)
-
----
-
-## 🔁 Reproducibility
+## ⚙️ Reproducibility
 
 ### Prerequisites
-- Python 3.11+
-- pip
-- Docker (optional for containerized deployment)
 
----
+- Python 3.10+
+- Docker (optional, for containerized deployment)
+- Git
 
 ### Installation
 
@@ -210,7 +170,6 @@ venv\Scripts\activate             # Windows
 pip install -r requirements.txt
 ```
 
-
 ### Usage
 
 **Run the interactive dashboard locally:**
@@ -223,6 +182,7 @@ python dashboard/app.py
 ```bash
 python main.py
 ```
+
 <details>
 <summary>📋 Expected CLI output (click to expand)</summary>
 
@@ -250,7 +210,7 @@ XGBoost            XXX.XX         XXX.XX          XXX.XX
 
 </details>
 
-**Docker Deployment:**
+**Run with Docker:**
 ```bash
 # Build the image
 docker build -t covid-forecasting .
@@ -263,24 +223,43 @@ docker run -p 8050:8050 covid-forecasting
 ### Run Tests
 
 ```bash
-pytest
+pytest tests/
 ```
 
-## 🧠 Engineering Practices Demonstrated
+---
 
-  - Modular architecture
-  - Separation of concerns
-  - Config-driven design
-  - Statistical rigor
-  - Cross-validation discipline
-  - Production deployment readiness
-  - Reproducibility
-  - Unit testing
-  - Environment-aware configuration
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Data Processing | Python, Pandas, NumPy |
+| Statistical Modeling | Statsmodels (SARIMAX) |
+| ML Modeling | XGBoost, scikit-learn |
+| Probabilistic Forecasting | Prophet (Meta) |
+| Visualization | Plotly, Dash |
+| Testing | pytest |
+| Containerization | Docker |
+| Deployment | Render |
+
+---
+
+## 🌐 Live Demo
+
+**[→ Launch Live Dashboard](https://us-covid-19-mortality-intelligence.onrender.com/)**
+
+> ⚠️ Hosted on Render's free tier — allow ~30s for cold start on first load.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for details.
+
+---
 
 <div align="center">
 
-**Built by [GodVilan](https://github.com/GodVilan)**
+**Built by [Srikanth Reddy](https://github.com/GodVilan)**
 
 *If this project was useful or interesting, consider leaving a ⭐*
 

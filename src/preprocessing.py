@@ -1,8 +1,14 @@
+import os
 import pandas as pd
 import re
 
+PROCESSED_PATH = "data/processed/preprocessed_jhu.csv"
 
-def preprocess_jhu_data(df: pd.DataFrame) -> pd.DataFrame:
+def preprocess_jhu_data(df: pd.DataFrame, save: bool = False) -> pd.DataFrame:
+
+    if save and os.path.exists(PROCESSED_PATH):
+        return pd.read_csv(PROCESSED_PATH, parse_dates=["date"])
+
     df = df[df["Country_Region"] == "US"].copy()
 
     date_pattern = re.compile(r"\d{1,2}/\d{1,2}/\d{2}")
@@ -30,5 +36,9 @@ def preprocess_jhu_data(df: pd.DataFrame) -> pd.DataFrame:
         .fillna(0)
         .clip(lower=0)
     )
+
+    if save:
+        os.makedirs("data/processed", exist_ok=True)
+        df_long.to_csv(PROCESSED_PATH, index=False)
 
     return df_long

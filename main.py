@@ -6,7 +6,7 @@ from src.benchmarking import rolling_cross_validation
 
 def main():
     df = load_raw_data()
-    df = preprocess_jhu_data(df)
+    df = preprocess_jhu_data(df, save=True)
     national = create_national_aggregation(df)
 
     cv_mae = rolling_cross_validation(national)
