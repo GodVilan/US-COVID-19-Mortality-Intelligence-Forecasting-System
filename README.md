@@ -56,8 +56,8 @@ SARIMAX was selected due to:
 
 covid-mortality-intelligence/
 ├── data/
-│   ├── raw/
-│   ├── processed/
+│   ├── raw/ (Not tracked)
+│   ├── processed/ (Not tracked)
 ├── src/
 │   ├── ingestion.py
 │   ├── preprocessing.py
