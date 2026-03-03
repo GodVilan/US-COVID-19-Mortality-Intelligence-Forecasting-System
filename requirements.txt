@@ -7,3 +7,4 @@ scikit-learn
 plotly
 dash
 dash_table
+pytest
